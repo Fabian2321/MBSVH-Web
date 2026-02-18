@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="de" id="htmlLang">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MBS Venture Hub - Club-Konzept</title>
+    <meta name="description" content="MBS Venture Hub - Ein Club für alle, die technologisches Know-how erwerben, Pitching Skills trainieren und innovative Startup-Ideen mit professioneller Methodik analysieren möchten.">
+    <meta name="keywords" content="MBS Venture Hub, Startup, Technologie, Pitch Skills, Innovation, München Business School">
+    <meta name="author" content="MBS Venture Hub">
+    <meta property="og:title" content="MBS Venture Hub - Club-Konzept">
+    <meta property="og:description" content="Lernen – Analysieren – Pitchen – Startups & Technologie verstehen">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://mbs-venture-hub.de">
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="Logo.jpeg">
+    <link rel="apple-touch-icon" href="Logo.jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <a href="#home" class="logo-link">
+                    <img src="Logo.jpeg" alt="MBSVH Logo" class="logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                    <h1 class="logo-fallback" style="display:none;">MBS Venture Hub</h1>
+                </a>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" data-i18n="nav.home">Home</a></li>
+                <li><a href="#events" data-i18n="nav.events">Upcoming Events</a></li>
+                <li><a href="#ziel" data-i18n="nav.goal">Ziel</a></li>
+                <li><a href="#struktur" data-i18n="nav.structure">Struktur</a></li>
+                <li><a href="#lernziele" data-i18n="nav.learning">Lernziele</a></li>
+                <li><a href="#dokumentation" data-i18n="nav.documentation">Dokumentation</a></li>
+                <li><a href="#rollen" data-i18n="nav.roles">Rollen</a></li>
+                <li><a href="#kontakt" data-i18n="nav.contact">Kontakt</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="lang-toggle" id="langToggle" aria-label="Switch language">
+                    <span id="langText">EN</span>
+                </button>
+                <button class="nav-toggle" id="navToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title" data-i18n="hero.title">MBS Venture Hub</h1>
+                <p class="hero-subtitle" data-i18n="hero.subtitle">Lernen – Analysieren – Pitchen – Startups & Technologie verstehen</p>
+                <p class="hero-description" data-i18n="hero.description">
+                    Ein Club für alle, die technologisches Know-how erwerben, Pitching Skills trainieren und innovative Startup-Ideen mit professioneller Methodik analysieren möchten.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#ziel" class="btn btn-primary" data-i18n="hero.learnMore">Mehr erfahren</a>
+                    <a href="#kontakt" class="btn btn-secondary" data-i18n="hero.join">Mitmachen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events -->
+    <section id="events" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="events.title">Upcoming Events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-icon">🚀</div>
+                    <h3 data-i18n="events.kickoff.title">KickOff Event</h3>
+                    <h4 data-i18n="events.kickoff.subtitle">Prompt-Engineering Competition</h4>
+                    <p data-i18n="events.kickoff.description">Starte mit uns in das neue Zeitalter! Lerne Prompt Engineering und zeige deine Skills in unserer Competition.</p>
+                    <div class="event-details">
+                        <div class="event-detail-item">
+                            <span class="event-detail-icon">📅</span>
+                            <span data-i18n="events.kickoff.date">Datum wird bekannt gegeben</span>
+                        </div>
+                        <div class="event-detail-item">
+                            <span class="event-detail-icon">📍</span>
+                            <span data-i18n="events.kickoff.location">MBS Campus</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ziel des Clubs -->
+    <section id="ziel" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="goal.title">Ziel des Clubs</h2>
+            <div class="goal-grid">
+                <div class="goal-card">
+                    <div class="goal-icon">💡</div>
+                    <h3 data-i18n="goal.card1.title">Technologisches Know-how</h3>
+                    <p data-i18n="goal.card1.text">Erwerben und verstehen, wie Technologie echten Wert für Startups und Märkte schafft</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">🎯</div>
+                    <h3 data-i18n="goal.card2.title">Pitching Skills trainieren</h3>
+                    <p data-i18n="goal.card2.text">Pitch-Fähigkeiten entwickeln und Feedback-Runden nutzen</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">🔍</div>
+                    <h3 data-i18n="goal.card3.title">Innovative Ideen analysieren</h3>
+                    <p data-i18n="goal.card3.text">Verstehen, warum Startups erfolgreich sind oder scheitern</p>
+                </div>
+                <div class="goal-card">
+                    <div class="goal-icon">🌍</div>
+                    <h3 data-i18n="goal.card4.title">Globale Perspektive</h3>
+                    <p data-i18n="goal.card4.text">Startups aus allen Branchen und Regionen kennenlernen</p>
+                </div>
+            </div>
+            <div class="goal-highlight">
+                <p><strong data-i18n="goal.approach.label">Unser Ansatz:</strong> <span data-i18n="goal.approach.text">Lernen – Analysieren – Pitchen – unabhängig und selbstständig, mit professioneller Methodik.</span></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Struktur der Meetings -->
+    <section id="struktur" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-i18n="structure.title">Struktur der Meetings</h2>
+            <div class="meeting-info">
+                <div class="meeting-meta">
+                    <span class="badge" data-i18n="structure.frequency">Alle 2 Wochen</span>
+                    <span class="badge" data-i18n="structure.duration">~1 Stunde</span>
+                </div>
+            </div>
+            
+            <div class="meeting-structure">
+                <div class="meeting-part">
+                    <div class="part-header">
+                        <span class="part-number">1</span>
+                        <h3 data-i18n="structure.part1.title">Tech Deep Dive / Workshop (30 min)</h3>
+                    </div>
+                    <div class="part-content">
+                        <div class="focus-box">
+                            <strong data-i18n="structure.part1.focus.label">Fokus:</strong> <span data-i18n="structure.part1.focus.text">Das in der letzten Session gewählte Startup</span>
+                        </div>
+                        <ul class="feature-list">
+                            <li>
+                                <strong data-i18n="structure.part1.analysis.label">Tiefe Technologie-Analyse:</strong> <span data-i18n="structure.part1.analysis.text">Wie Tech Wert schafft 
+                                (Impact, Business Model Support, Prozesse)</span>
+                            </li>
+                            <li>
+                                <strong data-i18n="structure.part1.discussion.label">Diskussion:</strong> <span data-i18n="structure.part1.discussion.text">Chancen, Limitationen, Anwendung in verschiedenen Branchen</span>
+                            </li>
+                            <li>
+                                <strong data-i18n="structure.part1.learning.label">Hands-On Learning:</strong> <span data-i18n="structure.part1.learning.text">Interaktiv, praxisorientiert</span>
+                                <ul class="sub-list">
+                                    <li data-i18n="structure.part1.learning.item1">Gemeinsame Erstellung eines Glossars mit Tech-Begriffen, Definitionen und Tools</li>
+                                    <li data-i18n="structure.part1.learning.item2">Beispiele aus externen Startup-Pitches</li>
+                                    <li><strong data-i18n="structure.part1.learning.goal.label">Ziel:</strong> <span data-i18n="structure.part1.learning.goal.text">Tech-Wissen praktisch verstehen, Anwendungen begreifen, 
+                                    Bibliothek technologischer Konzepte aufbauen</span></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="meeting-part">
+                    <div class="part-header">
+                        <span class="part-number">2</span>
+                        <h3 data-i18n="structure.part2.title">Startup Pitches (30 min)</h3>
+                    </div>
+                    <div class="part-content">
+                        <ul class="feature-list">
+                            <li><strong data-i18n="structure.part2.startups.label">3-5 externe Startups</strong> <span data-i18n="structure.part2.startups.text">pro Session</span></li>
+                            <li data-i18n="structure.part2.presented">Präsentiert von einem oder mehreren Mitgliedern</li>
+                            <li data-i18n="structure.part2.selection">Auswahl durch das Mitglied selbst; Unterstützung durch Präsident/COO bei Bedarf</li>
+                            <li>
+                                <strong data-i18n="structure.part2.guidelines.label">Pitch Template Guidelines:</strong>
+                                <ul class="sub-list">
+                                    <li data-i18n="structure.part2.guidelines.item1">Kerninformationen (Gründung, Produkt, Markt, Business Model)</li>
+                                    <li data-i18n="structure.part2.guidelines.item2">Innovation/Unique Selling Proposition</li>
+                                    <li data-i18n="structure.part2.guidelines.item3">Tech-Implementierung (kurz – vertieft im Deep Dive)</li>
+                                    <li data-i18n="structure.part2.guidelines.item4">Internationale Relevanz/Marktgröße</li>
+                                    <li data-i18n="structure.part2.guidelines.item5">Skalierbarkeit/Chancen & Risiken</li>
+                                </ul>
+                            </li>
+                            <li><strong data-i18n="structure.part2.end.label">Ende der Session:</strong> <span data-i18n="structure.part2.end.text">Abstimmung, welches Startup den Deep Dive + Workshop 
+                            in der nächsten Session erhält</span></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lernziele & Outputs -->
+    <section id="lernziele" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="learning.title">Lernziele & Outputs pro Meeting</h2>
+                <div class="outputs-grid">
+                <div class="output-card">
+                    <h3 data-i18n="learning.card1.title">Tech Deep Dive / Workshop</h3>
+                    <ul>
+                        <li data-i18n="learning.card1.item1">✓ Technologie verstehen und wie sie Wert schafft</li>
+                        <li data-i18n="learning.card1.item2">✓ Glossar erstellen → Begriffe, Tools, typische Anwendungen</li>
+                        <li data-i18n="learning.card1.item3">✓ Diskussion zu Implementierung, Chancen, Risiken</li>
+                    </ul>
+                </div>
+                <div class="output-card">
+                    <h3 data-i18n="learning.card2.title">Startup Pitches</h3>
+                    <ul>
+                        <li data-i18n="learning.card2.item1">✓ Pitching Skills trainieren</li>
+                        <li data-i18n="learning.card2.item2">✓ Startup-Analyse: Markt, Innovation, Team, Business Model</li>
+                        <li data-i18n="learning.card2.item3">✓ Inspiration durch externe, internationale Startups</li>
+                    </ul>
+                </div>
+                <div class="output-card">
+                    <h3 data-i18n="learning.card3.title">Gemeinsame Outputs</h3>
+                    <ul>
+                        <li data-i18n="learning.card3.item1">✓ Library of Pitch Decks – Sammlung aller präsentierten Startup-Pitches</li>
+                        <li data-i18n="learning.card3.item2">✓ Glossar/Tech-Dictionary & Toolkit – Kontinuierlicher Wissensaufbau</li>
+                        <li data-i18n="learning.card3.item3">✓ Feedback Loops – Abstimmung → Deep Dive → Lessons Learned</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dokumentation & Library -->
+    <section id="dokumentation" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-i18n="documentation.title">Dokumentation</h2>
+            <div class="documentation-content">
+                <div class="doc-card">
+                    <div class="doc-icon">📁</div>
+                    <h3 data-i18n="documentation.card1.title">Microsoft Teams</h3>
+                    <p><span data-i18n="documentation.card1.prefix">Alles wird in</span> <strong data-i18n="documentation.card1.strong">Microsoft Teams</strong> <span data-i18n="documentation.card1.text">dokumentiert: Pitch Decks, Glossar, Workshops, Learnings. Die Plattform bietet Dokumentenspeicherung, Chats, Diskussionen, Templates, Abstimmungen & Session-Tracking.</span></p>
+                </div>
+                <div class="doc-card">
+                    <div class="doc-icon">✨</div>
+                    <h3 data-i18n="documentation.card2.title">Was bietet es?</h3>
+                    <ul>
+                        <li data-i18n="documentation.card2.item1">Neue Mitglieder können direkt auf bestehendes Wissen zugreifen</li>
+                        <li data-i18n="documentation.card2.item2">Kombination aus Startup Pitches + Tech-Glossar → umfassende Lernressource</li>
+                        <li data-i18n="documentation.card2.item3">Zentrale Wissensdatenbank für alle Club-Mitglieder</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rollen & Organisation -->
+    <section id="rollen" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="roles.title">Rollen & Organisation</h2>
+            <div class="roles-grid">
+                <div class="role-card">
+                    <h3 data-i18n="roles.president.title">Präsident & Founder</h3>
+                    <p class="role-name" data-i18n="roles.president.name">Fabian Löffler</p>
+                    <ul>
+                        <li data-i18n="roles.president.item1">Lead Club</li>
+                        <li data-i18n="roles.president.item2">Moderiert Startup-Auswahl</li>
+                        <li data-i18n="roles.president.item3">Unterstützt Analysen</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <h3 data-i18n="roles.coo.title">COO & Co-Founder</h3>
+                    <p class="role-name" data-i18n="roles.coo.name">Alex Lohner-Benson</p>
+                    <ul>
+                        <li data-i18n="roles.coo.item1">Session-Organisation</li>
+                        <li data-i18n="roles.coo.item2">Assistenz</li>
+                        <li data-i18n="roles.coo.item3">Stellt Templates bereit</li>
+                    </ul>
+                </div>
+                <div class="role-card">
+                    <h3 data-i18n="roles.members.title">Mitglieder</h3>
+                    <ul>
+                        <li data-i18n="roles.members.item1">Bereiten Startup-Pitches vor</li>
+                        <li data-i18n="roles.members.item2">Gestalten Workshops mit</li>
+                        <li data-i18n="roles.members.item3">Erweitern Glossar</li>
+                        <li data-i18n="roles.members.item4">Geben Feedback</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="section">
+        <div class="container">
+            <h2 class="section-title" data-i18n="contact.title">Kontakt & Mitmachen</h2>
+            <div class="contact-content">
+                <p class="contact-intro" data-i18n="contact.intro">
+                    Interessiert am MBS Venture Hub? Wir freuen uns auf neue Mitglieder!
+                </p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">📧</span>
+                        <div>
+                            <h3 data-i18n="contact.email.label">E-Mail</h3>
+                            <p><a href="mailto:fabian.loeffler@munich-business-school.de">fabian.loeffler@munich-business-school.de</a></p>
+                            <p><a href="mailto:alex.lohner@munich-business-school.de">alex.lohner@munich-business-school.de</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">📱</span>
+                        <div>
+                            <h3 data-i18n="contact.social.title">Social Media</h3>
+                            <p><a href="https://instagram.com" target="_blank" rel="noopener noreferrer" data-i18n="contact.social.text">Folge uns auf Instagram</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 MBS Venture Hub. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span></p>
+            <p class="footer-subtitle" data-i18n="footer.tagline">Lernen – Analysieren – Pitchen</p>
+        </div>
+    </footer>
+
+    <script src="i18n.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
