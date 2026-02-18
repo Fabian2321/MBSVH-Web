@@ -4,9 +4,9 @@ Professionelle, hochwertige Website für den MBS Venture Hub Club.
 
 ## 🌐 Live Website
 
-**Domain**: [mbs-venture-hub.de](https://mbs-venture-hub.de), momentan LocalHost
-**Hosting**: IONOS  
-**Status**: Offline 
+**URL**: [mbs-venture-hub.de](https://mbs-venture-hub.de)  
+**Hosting**: GitHub Pages (Domain bei IONOS)  
+**Setup**: Siehe `GITHUB_PAGES_SETUP.md` 
 
 ## 🚀 Features
 
