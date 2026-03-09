@@ -110,12 +110,21 @@ function updateQrCountDisplay() {
     if (!isAdminView()) return;
     const el = document.getElementById('qrScanCount');
     if (!el) return;
-    fetch(`https://api.countapi.xyz/get/${QR_COUNT_NAMESPACE}/${QR_COUNT_KEY}`)
-        .then(r => r.json())
-        .then(data => {
-            el.textContent = typeof data.value === 'number' ? data.value : '–';
-        })
-        .catch(() => { el.textContent = '–'; });
+    var countUrl = 'https://api.countapi.xyz/get/' + QR_COUNT_NAMESPACE + '/' + QR_COUNT_KEY;
+    var proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(countUrl);
+    function setCount(data) {
+        el.textContent = typeof data.value === 'number' ? data.value : '–';
+    }
+    function tryAllOrigins() {
+        fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(countUrl))
+            .then(function(r) { return r.text(); })
+            .then(function(t) { try { setCount(JSON.parse(t)); } catch (e) { el.textContent = '–'; } })
+            .catch(function() { el.textContent = '–'; });
+    }
+    fetch(proxyUrl)
+        .then(function(r) { return r.json(); })
+        .then(setCount)
+        .catch(tryAllOrigins);
 }
 
 function isAdminView() {
