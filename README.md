@@ -9,10 +9,9 @@ Professionelle, hochwertige Website für den MBS Venture Hub Club.
 **Setup**: Siehe `GITHUB_PAGES_SETUP.md` 
 
 ### QR-Code & Scan-Zähler
-- Der Zähler „QR-Code gescannt“ auf der Seite zählt nur Besuche über die **QR-URL**.
+- Tracking erfolgt unsichtbar im Hintergrund – auf der Website selbst wird nichts angezeigt.
 - **QR-Code immer auf diese URL zeigen lassen:** `https://mbs-venture-hub.de/?ref=qr`
-- (Bei ChatGPT oder einem anderen Generator: URL eingeben, QR erstellen – dann werden nur Scans gezählt.)
-- Der Stand ist für alle sichtbar und jederzeit auf der Website unter „Upcoming Events“ einsehbar.
+- Auswertung: Im Browser `https://api.countapi.xyz/get/mbsvh/qr-scans` öffnen, dort steht der aktuelle Wert als JSON (`{"value": X}`).
 
 ## 🚀 Features
 
