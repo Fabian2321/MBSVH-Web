@@ -713,24 +713,6 @@ body {
 .event-detail-icon {
     font-size: 20px;
 }
-
-.event-qr-stats {
-    display: none; /* nur für Admin-View sichtbar (per JS) */
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid var(--border-light);
-    color: var(--text-secondary);
-    font-size: 14px;
-}
-
-.event-qr-count {
-    font-weight: 600;
-    color: var(--primary-color);
-}
-
 /* Premium Documentation */
 .documentation-content {
     display: grid;

@@ -89,7 +89,7 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
-// QR-Code Scan Counter (CountAPI – zentral, für alle sichtbar)
+// QR-Code Scan Counter (CountAPI – nur Tracking, keine Anzeige auf der Seite)
 const QR_COUNT_NAMESPACE = 'mbsvh';
 const QR_COUNT_KEY = 'qr-scans';
 const QR_COUNT_STORAGE = 'mbsvh_qr_counted';
@@ -104,33 +104,6 @@ function hitQrCount() {
     const url = `https://api.countapi.xyz/hit/${QR_COUNT_NAMESPACE}/${QR_COUNT_KEY}`;
     const img = new Image();
     img.src = url;
-}
-
-function updateQrCountDisplay() {
-    if (!isAdminView()) return;
-    const el = document.getElementById('qrScanCount');
-    if (!el) return;
-    var countUrl = 'https://api.countapi.xyz/get/' + QR_COUNT_NAMESPACE + '/' + QR_COUNT_KEY;
-    var proxyUrl = 'https://corsproxy.io/?' + encodeURIComponent(countUrl);
-    function setCount(data) {
-        el.textContent = typeof data.value === 'number' ? data.value : '–';
-    }
-    function tryAllOrigins() {
-        fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(countUrl))
-            .then(function(r) { return r.text(); })
-            .then(function(t) { try { setCount(JSON.parse(t)); } catch (e) { el.textContent = '–'; } })
-            .catch(function() { el.textContent = '–'; });
-    }
-    fetch(proxyUrl)
-        .then(function(r) { return r.json(); })
-        .then(setCount)
-        .catch(tryAllOrigins);
-}
-
-function isAdminView() {
-    const params = new URLSearchParams(window.location.search);
-    const hash = window.location.hash ? new URLSearchParams(window.location.hash.replace('#', '?')) : null;
-    return params.get('admin') === '1' || (hash && hash.get('admin') === '1');
 }
 
 // Observe all cards and sections
@@ -152,13 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             hitQrCount();
             sessionStorage.setItem(QR_COUNT_STORAGE, '1');
         }
-    }
-    if (isAdminView()) {
-        const stats = document.querySelector('.event-qr-stats');
-        if (stats) {
-            stats.style.display = 'flex';
-        }
-        updateQrCountDisplay();
     }
 });
 
