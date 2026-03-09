@@ -89,10 +89,45 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// QR-Code Scan Counter (CountAPI – zentral, für alle sichtbar)
+const QR_COUNT_NAMESPACE = 'mbsvh';
+const QR_COUNT_KEY = 'qr-scans';
+const QR_COUNT_STORAGE = 'mbsvh_qr_counted';
+
+function isQrVisit() {
+    const params = new URLSearchParams(window.location.search);
+    const hash = window.location.hash ? new URLSearchParams(window.location.hash.replace('#', '?')) : null;
+    return params.get('ref') === 'qr' || (hash && hash.get('ref') === 'qr');
+}
+
+function hitQrCount() {
+    const url = `https://api.countapi.xyz/hit/${QR_COUNT_NAMESPACE}/${QR_COUNT_KEY}`;
+    const img = new Image();
+    img.src = url;
+}
+
+function updateQrCountDisplay() {
+    if (!isAdminView()) return;
+    const el = document.getElementById('qrScanCount');
+    if (!el) return;
+    fetch(`https://api.countapi.xyz/get/${QR_COUNT_NAMESPACE}/${QR_COUNT_KEY}`)
+        .then(r => r.json())
+        .then(data => {
+            el.textContent = typeof data.value === 'number' ? data.value : '–';
+        })
+        .catch(() => { el.textContent = '–'; });
+}
+
+function isAdminView() {
+    const params = new URLSearchParams(window.location.search);
+    const hash = window.location.hash ? new URLSearchParams(window.location.hash.replace('#', '?')) : null;
+    return params.get('admin') === '1' || (hash && hash.get('admin') === '1');
+}
+
 // Observe all cards and sections
 document.addEventListener('DOMContentLoaded', () => {
     const animatedElements = document.querySelectorAll(
-        '.goal-card, .meeting-part, .output-card, .role-card, .feature-item, .optional-item, .doc-card'
+        '.goal-card, .meeting-part, .output-card, .role-card, .feature-item, .optional-item, .doc-card, .event-card'
     );
     
     animatedElements.forEach(el => {
@@ -101,6 +136,21 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    // QR-Tracking: nur bei Besuch über QR-URL zählen, pro Session nur 1x
+    if (isQrVisit()) {
+        if (!sessionStorage.getItem(QR_COUNT_STORAGE)) {
+            hitQrCount();
+            sessionStorage.setItem(QR_COUNT_STORAGE, '1');
+        }
+    }
+    if (isAdminView()) {
+        const stats = document.querySelector('.event-qr-stats');
+        if (stats) {
+            stats.style.display = 'flex';
+        }
+        updateQrCountDisplay();
+    }
 });
 
 // Add active state to navigation links based on scroll position

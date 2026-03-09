@@ -8,6 +8,12 @@ Professionelle, hochwertige Website für den MBS Venture Hub Club.
 **Hosting**: GitHub Pages (Domain bei IONOS)  
 **Setup**: Siehe `GITHUB_PAGES_SETUP.md` 
 
+### QR-Code & Scan-Zähler
+- Der Zähler „QR-Code gescannt“ auf der Seite zählt nur Besuche über die **QR-URL**.
+- **QR-Code immer auf diese URL zeigen lassen:** `https://mbs-venture-hub.de/?ref=qr`
+- (Bei ChatGPT oder einem anderen Generator: URL eingeben, QR erstellen – dann werden nur Scans gezählt.)
+- Der Stand ist für alle sichtbar und jederzeit auf der Website unter „Upcoming Events“ einsehbar.
+
 ## 🚀 Features
 
 ### Design & UX
